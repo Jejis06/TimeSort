@@ -2,7 +2,7 @@
 
 Reads values from a given array. For every element of value 'a' creates a async job and pauses it for 'a' seconds. Afterwards it assigns value to the array at index 'it'. The time sorts our array
 
-```
+```c++
 #include <thread>
 #include <future>
 #include <chrono>
