@@ -1,6 +1,6 @@
 # Time sort in c++ 📝
 
-Reads values from a given array. For every element of value 'a' creates a async job and pauses it for 'a' seconds. Afterwards it assigns value to the array at index 'it'. The time sorts our array
+Reads values from a given array. For every element of arr reads and saves value 'time' creates a async job and pauses it for 'time' seconds. Afterwards it assigns value to the array at addres that 'it' points to. The time sorts our array
 
 ```c++
 #include <thread>
@@ -11,17 +11,18 @@ Reads values from a given array. For every element of value 'a' creates a async 
 /* Time sort */
 
 template<typename T>
-void TimeSort(T* arr, size_t size){
+void TimeSort(T* beg, T* end){
     std::vector<std::future<int>> threads;
-    size_t it=0;
+    size_t len = (end - beg);
+    T* it = beg;
 
-    for(int i=0; i<size; i++){
-	threads.push_back(std::async(std::launch::async,[&it,&arr,i](){
-		int time = static_cast<int>(arr[i]);
-		std::this_thread::sleep_for(std::chrono::milliseconds(time));
-		arr[it] = time;
+    for(int i=0; i<len; i++){
+	threads.push_back(std::async(std::launch::async,[&it,&beg,i](){
+		int time = static_cast<int>(*(beg + i));
+		std::this_thread::sleep_for(std::chrono::milliseconds(time)); 
+		*it = time;
 		it++;
-
+		
 		return 1;
         }));
     }
