@@ -6,16 +6,15 @@
 /* Time sort */
 
 template<typename T>
-void TimeSort(T* beg, T* end){
+void TimeSort(T* arr, size_t size){
     std::vector<std::future<int>> threads;
-    size_t size=(end - beg); end--;
-    T* it = beg;
+    size_t it=0;
 
     for(int i=0; i<size; i++){
-	threads.push_back(std::async(std::launch::async,[&it,&beg,i](){
-		int time = static_cast<int>(*(beg + i));
+	threads.push_back(std::async(std::launch::async,[&it,&arr,i](){
+		int time = static_cast<int>(arr[i]);
 		std::this_thread::sleep_for(std::chrono::milliseconds(time)); 
-		*it = time;
+		arr[it] = time; 
 		it++;
 		
 		return 1;
