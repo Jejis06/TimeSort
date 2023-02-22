@@ -44,8 +44,6 @@ void __Tsort(T* begin, T* end, short sign){
 /* helper function */
 template<typename T>
 void TimeSort(T* begin, T* end){
-	size_t size = end - begin;
-	end--;
 	T* neg = Switch(begin,end);
 
 	if(*neg< 0) __Tsort(neg,begin-1,-1);
