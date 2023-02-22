@@ -3,7 +3,7 @@
 #include <chrono>
 #include <vector>
 
-/* Time sort */
+/* negative number switcher */
 template<typename T>
 T* Switch(T* beg, T* end){
 	T* ptr = beg;
@@ -20,6 +20,7 @@ T* Switch(T* beg, T* end){
 	return ptr-1;
 }
 
+/* Time sort */
 template<typename T>
 void __Tsort(T* begin, T* end, short sign){
 	std::vector<std::future<int>> threads;
@@ -41,6 +42,7 @@ void __Tsort(T* begin, T* end, short sign){
 
 }
 
+/* helper function */
 template<typename T>
 void TimeSort(T* begin, T* end){
 	size_t size = end - begin;
