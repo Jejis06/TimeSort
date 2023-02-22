@@ -9,7 +9,7 @@ int main(){
 		std::cout << arr[i] << ' ';
 
 	/* sort array */
-	TimeSort(arr,arr+size);
+	TimeSort(arr,arr+size-1);
 	std::cout << '\n';
 
 
