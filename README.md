@@ -10,7 +10,6 @@ Reads values from a given array. For every element of arr reads and saves value 
 
 /* negative number switcher */
 template<typename T>
-<<<<<<< HEAD
 T* Switch(T* beg, T* end){
 	T* ptr = beg;
 	T temp; 
