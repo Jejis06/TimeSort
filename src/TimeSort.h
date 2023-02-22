@@ -39,7 +39,6 @@ void __Tsort(T* begin, T* end, short sign){
 	}
 	for(auto&& job : threads)
 		job.get();
-
 }
 
 /* helper function */

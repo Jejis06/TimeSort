@@ -10,6 +10,7 @@ Reads values from a given array. For every element of arr reads and saves value 
 
 /* negative number switcher */
 template<typename T>
+<<<<<<< HEAD
 T* Switch(T* beg, T* end){
 	T* ptr = beg;
 	T temp; 
@@ -44,7 +45,6 @@ void __Tsort(T* begin, T* end, short sign){
 	}
 	for(auto&& job : threads)
 		job.get();
-
 }
 
 /* helper function */
