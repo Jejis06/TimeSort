@@ -62,6 +62,6 @@ void TimeSort(T* begin, T* end){
 
 It accepts arrays with negative numbers !!! 
 
-Code is in [./src/TimeSort.h](./src/TimeSort.h) and excample of how to use it is in test [./src/main.cpp](./src/main.cpp)
+Code is in [./src/TimeSort.h](./src/TimeSort.h) and example of how to use it is in test [./src/main.cpp](./src/main.cpp)
 
 
